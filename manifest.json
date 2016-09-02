@@ -1,0 +1,14 @@
+{
+  "name": "EZ Form Filler",
+  "description": "Chrome App",
+  "version": "2.3",
+  "manifest_version": 2,
+  "container":"GOOGLE_DRIVE",
+  "api_console_project_id":"YOUR KEY GOES HERE",
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+  "icons": { "16": "calculator-16.png", "128": "calculator-128.png" }
+}
