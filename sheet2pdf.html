@@ -14,123 +14,26 @@
 	-->
 	
 	<!-- USE LOCAL FILES -->
-<script src="code/jquery/jquery-1.12.0.min.js"></script>
-<script src="code/xlsx/xlsx.core.min.js"></script>
-<script src="code/jsPDF/dist/jspdf.min.js"></script>
-<script src="code/javascript/sheet2pdf.js"></script>
-<script src="code/build/pdf.js"></script>
-<script src="code/build/pdf.worker.js"></script>
+<script src="../code/jquery/jquery-1.12.0.min.js"></script>
+<script src="../code/xlsx/xlsx.core.min.js"></script>
+<script src="../code/jsPDF/dist/jspdf.min.js"></script>
+<script src="../code/javascript/sheet2pdf.js"></script>
+<script src="../code/build/pdf.js"></script>
+<script src="../code/build/pdf.worker.js"></script>
 
 
 
     <title>EZ form filler</title>
-    <!-- The Google API client library for Javascript. -->
-	
-	<!-- NOT WORKING_ PROCEDURE IS FOR WEB APP - NOT CHROME APP!!! 
-	
-	<script src="code/googleJS/client.js"></script>
-    
-	
-    <script type="text/javascript">
 
-      // The Browser API key obtained from the Google Developers Console.
-      var developerKey = 'AIzaSyDtu7mLlTEayU9IwJsuYs99N5apkfkt3gs';
-
-      // The Client ID obtained from the Google Developers Console. Replace with your own Client ID.
-      var clientId ="367434952293-go3rh2ad31mn38734rp1lpau47dga507.apps.googleusercontent.com"
-
-      // Scope to use to access user's google drive.
-      var scope = ['https://www.googleapis.com/auth/drive'];
-
-      var pickerApiLoaded = false;
-      var oauthToken;
-
-      // Use the API Loader script to load google.picker and gapi.auth.
-      function onApiLoad() {
-        gapi.load('auth', {'callback': onAuthApiLoad});
-        gapi.load('picker', {'callback': onPickerApiLoad});
-      }
-
-      function onAuthApiLoad() {
-        window.gapi.auth.authorize(
-            {
-              'client_id': clientId,
-              'scope': scope,
-              'immediate': false
-            },
-            handleAuthResult);
-      }
-
-      function onPickerApiLoad() {
-        pickerApiLoaded = true;
-       // createPicker(); /* UNCOMMMENT TO OPEN ON LOAD*/
-      }
-
-      function handleAuthResult(authResult) {
-        if (authResult && !authResult.error) {
-          oauthToken = authResult.access_token;
-         // createPicker(); /* UNCOMMMENT TO OPEN ON LOAD*/
-        }
-      }
-
-      // Create and render a Picker object for picking user Photos.
-      function createPicker() {
-        if (pickerApiLoaded && oauthToken) {
-          var picker = new google.picker.PickerBuilder().
-              addView(google.picker.ViewId.DOCS).
-              setOAuthToken(oauthToken).
-              setDeveloperKey(developerKey).
-              setCallback(pickerCallback).
-              build();
-          picker.setVisible(true);
-        }
-      }
-
-      // A simple callback implementation.
-      function pickerCallback(data) {
-        var url = 'nothing';
-        if (data[google.picker.Response.ACTION] == google.picker.Action.PICKED) {
-		 console.log(data[google]);
-          var doc = data[google.picker.Response.DOCUMENTS][0];
-		
-          url = doc[google.picker.Document.URL];
-		
-		  downloadFile(url);//AUTO DOWNLOAD
-        }
-        
-      };
-	  /*******************MY ADDITION*******************/
-	  /*
-	  http://www.html5rocks.com/en/tutorials/cors/
-	  https://developers.google.com/api-client-library/javascript/features/cors#making-authenticated-requests
-	  
-	  https://developers.google.com/drive/v3/reference/files/export#request
-	  */
-  
-function downloadFile(fileURL) {
-	var clipURL = fileURL.split("edit?");
-	
-	//change the url to be an export url request (for download), format XLS
-	var newURL = clipURL[0]+"export?mimeType=application%2Fvnd.openxmlformats-officedocument.spreadsheetml.sheet&key="+developerKey;
-
-	window.location.assign(newURL)
-};
-	  /***********************************************/
-
-    </script>
-	-->
 	
   </head>
 
   
   <body>
-<!-- 
- <p>ONLY PICK Spreadsheets! <br>The file selected will auto download to your computers 'downloads' folder as an '.xlsx' file.</p>
-  <button type="button" id="pick" onclick="createPicker()">Get Client Sheet From GoogleDrive</button>
-  -->
+
     <div id="result"></div>
 
-  <p id="xlfText">SELECT A CLIENT'S XLSX FILE FROM YOUR COMPUTER</p>
+  <p id="xlfText">SELECT A XLSX FILE FROM YOUR COMPUTER</p>
   <input name="xlfile" id="xlf" type="file"style="background-color:green;color: white">
   <br>
   <p id="pdfText" >SELECT A PDF FORM TEMPLATE FROM YOUR COMPUTER</p>
