@@ -1,0 +1,53 @@
+
+   <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- REMOTE LOCATIONS OF LIBS -->
+	<!--  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.core.min.js"></script>
+	<script type="text/javascript" src="https://raw.github.com/mozilla/pdf.js/gh-pages/build/pdf.js"></script>
+	 <script src="https://parall.ax/parallax/js/jspdf.js"></script>
+	 <script src="https://apis.google.com/js/client.js?onload=checkAuth">
+    </script>
+	<script type="text/javascript" src="https://apis.google.com/js/api.js?onload=onApiLoad"></script>
+	-->
+	
+	<!-- USE LOCAL FILES -->
+<script src="../code/jquery/jquery-1.12.0.min.js"></script>
+<script src="../code/xlsx/xlsx.core.min.js"></script>
+<script src="../code/jsPDF/dist/jspdf.min.js"></script>
+<script src="../code/javascript/sheet2pdf.js"></script>
+<script src="../code/build/pdf.js"></script>
+<script src="../code/build/pdf.worker.js"></script>
+
+
+
+    <title>EZ form filler</title>
+
+	
+  </head>
+
+  
+  <body>
+
+    <div id="result"></div>
+
+  <p id="xlfText">SELECT A XLSX FILE FROM YOUR COMPUTER</p>
+  <input name="xlfile" id="xlf" type="file"style="background-color:green;color: white">
+  <br>
+  <p id="pdfText" >SELECT A PDF FORM TEMPLATE FROM YOUR COMPUTER</p>
+  <input name="pdftemp" id="pdf" type="file" style="background-color:red">
+  <br>
+  <div id="errorMsg"></div>
+  <a href="" id="download" style="font-size:20px;  text-align: left">DOWNLOAD Filled Form</a>
+ <a id="StartOver" style="font-size:20px;  text-align: left">Select an XLSX file to start a new form</a>
+ <br>
+  <a id="working" style="font-size:20px;  text-align: left"></a>
+  
+  <!-- The Google API Loader script. -->
+    <script type="text/javascript" src="code/googleJS/api.js"></script>
+
+  
+  <canvas id="canvas" style="display:block;"></canvas>
+  </body>
